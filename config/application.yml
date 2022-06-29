@@ -1,0 +1,13 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+my_postgres_password: 'swanklion1'
+DEVISE_SECRET_KEY: 'cac4aaba29a041c2a66bfe24139e5d200815e58d6a0819b58d9b3c4a4cc691d5ca60789781bcf49b987e5906da532c9915dfe83d467ef8cda75031ef4ca924b2'
