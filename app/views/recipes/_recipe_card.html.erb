@@ -1,0 +1,42 @@
+<div class="card recipe-card">
+  <div class="section1">
+    <h2>
+      <%= link_to controller: "recipes", action: "show", id: recipe.id do %>
+        <%= recipe.name %>
+      <% end %>
+    </h2>
+    <% if public %>
+      <p> 
+        <span>By:</span>
+        <span>recipe.user.name</span>
+      </p>
+    <% else %>
+      <%= button_to "Delete", {:controller => :recipes,
+      :action => 'destroy', :id => recipe.id }, :method => :delete, class:"btn-general" %>
+    <% end %>
+  </div>
+  <div class="section2">
+    <% if public %>
+      <p> 
+        <span>
+          Total food items:
+        </span>
+          recipe.foods.count
+        <span>
+        </span>
+      </p>
+      <p> 
+        <span>
+          Total Price:
+        </span>
+        <span>
+          00
+        </span>
+      </p>
+    <% else %>
+      <p>
+        <%= recipe.description %>
+    </p>
+    <% end %>
+  </div>
+</div>

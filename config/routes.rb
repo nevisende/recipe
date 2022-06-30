@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/sign_out'
   resources :users, only: %i[index]
-  
-  get "/public_recipes", to: "recipes#public"
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-    resources :items
-  end
+
+  get '/public_recipes', to: 'recipes#public'
+  resources :recipes, only: %i[index show new create destroy]
 end

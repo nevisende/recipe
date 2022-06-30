@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  <%= render "layouts/navigation" %>
   <% flash.each do |type, msg| %>
         <div class="w-full">
           <p class="text-blue-600"><%= msg %></p>
