@@ -23,9 +23,10 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html do
         if recipe.save
-          redirect_to recipes_path flash: { alert: 'Success' }
+          flash[:notice] = 'Recipe Created Successfully'
+          redirect_to recipes_path
         else
-          render :new, locals: { recipe: }, flash: { alert: 'Error occured' }
+          flash[:notice] = 'Error occcured, Please check values'
         end
       end
     end
@@ -37,9 +38,9 @@ class RecipesController < ApplicationController
     puts is_public
     @recipe.public = is_public
     if @recipe.save
-      render :new, flash: { alert: 'Success' }
+      flash[:notice] = 'Success'
     else
-      render :new, flash: { alert: 'Error occured' }
+      flash[:notice] = 'Error occcured'
     end
   end
 
@@ -48,7 +49,8 @@ class RecipesController < ApplicationController
     recipe.destroy
     respond_to do |format|
       format.html do
-        redirect_to recipes_path flash: { alert: 'Success' }
+        flash[:notice] = 'Removed Successfully'
+        redirect_to recipes_path
       end
     end
   end
