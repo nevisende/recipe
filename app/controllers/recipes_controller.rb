@@ -37,11 +37,11 @@ class RecipesController < ApplicationController
     is_public = params['public']
     puts is_public
     @recipe.public = is_public
-    if @recipe.save
-      flash[:notice] = 'Success'
-    else
-      flash[:notice] = 'Error occcured'
-    end
+    flash[:notice] = if @recipe.save
+                       'Success'
+                     else
+                       'Error occcured'
+                     end
   end
 
   def destroy

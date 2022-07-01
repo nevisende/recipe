@@ -16,8 +16,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: recipe-development
+  database: recipe-test
 
 production:
   <<: *default
-  database: recipe-development
+  database: recipe-production

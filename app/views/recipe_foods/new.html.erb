@@ -1,0 +1,24 @@
+<div class="container-main">
+  <h1>Add Ingredient to <%= @recipe.name %> </h1>
+  <div class="recipe-form-container">
+    <%= form_with model: recipe_food, url: recipe_recipe_foods_path, method: :post, local: true, scope: :recipe_food do |f|%>
+      <select name="recipe_food[food_id]">
+        <% @foods.each do |food| %>
+            <option value="<%= food.id %>"><%= food.name %></option>
+        <% end %>
+      </select>
+      <div>
+        <%= f.label :quantity %><br>
+        <%= f.number_field :quantity, value:1, min: 1, class:"number-input" %>
+      </div>
+      
+      <%= f.submit "Add Food", class:"btn-general btn-submit" %>
+    <% end %>
+  </div>
+
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+</div>
