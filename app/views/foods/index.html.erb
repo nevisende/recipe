@@ -19,7 +19,7 @@
     <% @foods.each do |food|%>
     <tr>
       <td><%= food.name%></th>
-      <td><%= food.measurement_unit%></td>
+      <td><%= food.measurementUnit%></td>
       <td>$<%= food.price%></td>
       <td class="mb-3 col-sm-2">
       <%if can? :destroy, food%>
