@@ -27,9 +27,9 @@
           hour(s)
         </span>
       </h3>
-      <h3>
-        Steps go here
-      </h3>
+      <p>
+        <%= @recipe.description %>
+      </p>
     </div>
     <div class="toggle-public">
       <%= form_with url: "/recipe/#{@recipe.id}/toggle_public", method: :post do |f|%>
