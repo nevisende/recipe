@@ -11,7 +11,10 @@
   </head>
 
   <body>
-  <%= render "layouts/navigation" %>
+  <% if user_signed_in? %>
+    <%= render "layouts/navigation" %>
+  <% end %>
+
   <% flash.each do |type, msg| %>
         <div class="w-full">
           <p class="text-blue-600"><%= msg %></p>

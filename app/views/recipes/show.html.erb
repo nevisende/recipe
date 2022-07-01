@@ -1,8 +1,54 @@
-<%= render "recipes/recipe_card", recipe: @recipe %>
+<div class="container-main">
+  <h1>
+    <%= @recipe.name %>
+  </h1>
+
+  <div class="recipe-details-display">
+    <div class="details">
+      <h3>
+        <span>
+          Preparation time:
+        </span>
+        <span>
+          <%= @recipe.preparation_time %>
+        </span>
+        <span>
+          hour(s)
+        </span>
+      </h3>
+      <h3>
+        <span>
+          Cooking time:
+        </span>
+        <span>
+          <%= @recipe.cooking_time %>
+        </span>
+        <span>
+          hour(s)
+        </span>
+      </h3>
+      <h3>
+        Steps go here
+      </h3>
+    </div>
+    <div class="toggle-public">
+      <%= form_with url: "/recipe/#{@recipe.id}/toggle_public", method: :post do |f|%>
+        <%= f.label :public %>
+        <%= f.check_box :public, :onclick => "this.form.submit()" %>
+      <% end %>
+    </div>
+  </div>
 
 
-<button> Generate Shopping List </button>
+  <div class="button-list">
+    <button class="btn-general"> Generate Shopping List </button>
 
-<button> Add Ingredient </button>
+    <button class="btn-general"> Add Ingredient </button>
+  </div>
 
+  <hr/>
 
+  <h3> </h3>
+  
+
+</div>

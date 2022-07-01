@@ -31,6 +31,18 @@ class RecipesController < ApplicationController
     end
   end
 
+  def toggle_public
+    @recipe = Recipee.find(params[:id])
+    is_public = params['public']
+    puts is_public
+    @recipe.public = is_public
+    if @recipe.save
+      render :new, flash: { alert: 'Success' }
+    else
+      render :new, flash: { alert: 'Error occured' }
+    end
+  end
+
   def destroy
     recipe = current_user.recipees.find(params[:id])
     recipe.destroy
