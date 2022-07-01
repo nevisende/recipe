@@ -5,7 +5,7 @@
         <%= recipe.name %>
       <% end %>
     </h2>
-    <% if public %>
+    <% if recipe.public %>
       <p> 
         <span>By:</span>
         <span>recipe.user.name</span>
@@ -16,7 +16,7 @@
     <% end %>
   </div>
   <div class="section2">
-    <% if public %>
+    <% if recipe.public %>
       <p> 
         <span>
           Total food items:
