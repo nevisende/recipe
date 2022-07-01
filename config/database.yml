@@ -1,7 +1,4 @@
 default: &default
-  host: 127.0.0.1
-  username: postgres
-  password: <%= ENV["my_postgres_password"] %>
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
@@ -10,10 +7,13 @@ development:
   <<: *default
   database: recipe-development
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: recipe-test
+  database: recipe-development
 
 production:
   <<: *default
-  database: recipe-production
+  database: recipe-development
