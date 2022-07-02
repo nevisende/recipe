@@ -41,7 +41,7 @@
 
 
   <div class="button-list">
-    <%= link_to 'Generate Shopping List', recipe_path, class: "btn-general" %>
+    <%= link_to 'Generate shopping list', recipe_shopping_list_path(@recipe.id), class: 'btn btn-outline-dark' %>
     <% if can? :update , @recipe %>
       <%= link_to 'Add Ingredient', {:controller => :recipe_foods,
           :action => 'new', :recipe_id => @recipe.id }, :method => :get, class: "btn-general" %>
