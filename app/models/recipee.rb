@@ -5,4 +5,12 @@ class Recipee < ApplicationRecord
   belongs_to :user
   has_many :recipe_foods
   has_many :foods, through: :recipe_foods
+
+  def recipe_total
+    total = 0
+    recipe_foods.all.each do |ingredient|
+      total += ingredient.quantity * ingredient.food.price
+    end
+    total
+  end
 end

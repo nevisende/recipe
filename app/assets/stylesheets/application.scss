@@ -57,7 +57,7 @@ hr {
   gap: 1.5rem
 }
 
-.card {
+.recipe-card {
   width: 100%;
   border: 2px solid black;
   height: 10rem;
@@ -65,7 +65,12 @@ hr {
   justify-content: space-between;
 }
 
-.card .section1 {
+.recipe-card p {
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.recipe-card .section1 {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -74,7 +79,7 @@ hr {
   gap: 2rem
 }
 
-.card .section2 {
+.recipe-card .section2 {
   width: 60%;
   display: flex;
   flex-direction: column;

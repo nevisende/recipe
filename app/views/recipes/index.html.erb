@@ -2,7 +2,7 @@
   <%= link_to 'Create Recipe', new_recipe_path, class: "btn-general"  %>
   <div class="cards-list">
     <% @recipes.each do |recipe| %>
-      <%= render "recipes/recipe_card", recipe: recipe, public:false %>
+      <%= render "recipes/recipe_card", recipe: recipe, is_public:false %>
     <% end %>
   </div>
 </div>
