@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <% if user_signed_in? %>
+    <%= render "layouts/navigation" %>
+  <% end %>
+
+  <% flash.each do |type, msg| %>
+        <div class="w-full">
+          <p class="text-blue-600"><%= msg %></p>
+        </div>
+   <% end %>
+      <div id="user_nav">
+       
+        </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
