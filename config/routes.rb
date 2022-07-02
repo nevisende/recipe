@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :shopping_list, only: %i[index show]
   end
   get '/public_recipes', to: 'recipes#public'
+
+  post '/recipe/:id/toggle_public', to: 'recipes#toggle_public'
   post 'shopping_list/recipe_id=:recipe_id', to: 'recipes#generate_list', as: 'generate_shopping_list'
   get 'shopping_list/recipe_id=:recipe_id&inventory_id=:inventory_id', to: 'recipes#generate', as: 'shopping_list'
 end

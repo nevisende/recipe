@@ -23,12 +23,25 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html do
         if recipe.save
-          redirect_to recipes_path flash: { alert: 'Success' }
+          flash[:notice] = 'Recipe Created Successfully'
+          redirect_to recipes_path
         else
-          render :new, locals: { recipe: }, flash: { alert: 'Error occured' }
+          flash[:notice] = 'Error occcured, Please check values'
         end
       end
     end
+  end
+
+  def toggle_public
+    @recipe = Recipee.find(params[:id])
+    is_public = params['public']
+    puts is_public
+    @recipe.public = is_public
+    flash[:notice] = if @recipe.save
+                       'Success'
+                     else
+                       'Error occcured'
+                     end
   end
 
   def destroy
@@ -36,7 +49,8 @@ class RecipesController < ApplicationController
     recipe.destroy
     respond_to do |format|
       format.html do
-        redirect_to recipes_path flash: { alert: 'Success' }
+        flash[:notice] = 'Removed Successfully'
+        redirect_to recipes_path
       end
     end
   end
