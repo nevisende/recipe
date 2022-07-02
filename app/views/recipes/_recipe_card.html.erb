@@ -1,11 +1,11 @@
-<div class="card recipe-card">
+<div class="recipe-card">
   <div class="section1">
     <h2>
       <%= link_to controller: "recipes", action: "show", id: recipe.id do %>
         <%= recipe.name %>
       <% end %>
     </h2>
-    <% if recipe.public %>
+    <% if is_public %>
       <p> 
         <span>By:</span>
         <span><%= recipe.user.name %></span>
@@ -16,7 +16,7 @@
     <% end %>
   </div>
   <div class="section2">
-    <% if recipe.public %>
+    <% if is_public %>
       <p> 
         <span>
           Total food items:
@@ -30,7 +30,7 @@
           Total Price:
         </span>
         <span>
-          0
+          $<%= recipe.recipe_total %>
         </span>
       </p>
     <% else %>
