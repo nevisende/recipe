@@ -8,7 +8,7 @@
     <% if recipe.public %>
       <p> 
         <span>By:</span>
-        <span>recipe.user.name</span>
+        <span><%= recipe.user.name %></span>
       </p>
     <% else %>
       <%= button_to "Delete", {:controller => :recipes,
@@ -21,7 +21,7 @@
         <span>
           Total food items:
         </span>
-          recipe.foods.count
+          <%= recipe.foods.count %>
         <span>
         </span>
       </p>
@@ -30,7 +30,7 @@
           Total Price:
         </span>
         <span>
-          00
+          0
         </span>
       </p>
     <% else %>

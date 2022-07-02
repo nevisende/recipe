@@ -1,7 +1,12 @@
 <nav class="navigation-links">
-  <%= link_to 'My Recipes', recipes_path, class: "btn-general"  %>
-  <%= link_to 'Public Recipes', public_recipes_path, class: "btn-general"  %>
-  <%= link_to 'Foods', foods_path, class: "btn-general"  %>
+  <%= link_to 'My Recipes', recipes_path, class: "nav-link active"  %>
+  <%= link_to 'Public Recipes', public_recipes_path, class: "nav-link active"  %>
+  <%= link_to 'Foods', foods_path, class: "nav-link active"  %>
+   <% if user_signed_in? %>
+<%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
+        <% else %>
+            <%= link_to "Register", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
 
   <%
 =begin%>
